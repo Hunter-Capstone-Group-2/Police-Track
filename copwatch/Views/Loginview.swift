@@ -67,7 +67,7 @@ import SwiftUI
                 
                 Button(action: {
                     withAnimation {
-                        self.currentShowingView = "signup "
+                        self.currentShowingView = "signup"
                     }
                     
                     
@@ -92,7 +92,7 @@ import SwiftUI
                         .padding()
                     
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 100)
                                 .fill(Color.black )
                         )
                         .padding(.horizontal )
