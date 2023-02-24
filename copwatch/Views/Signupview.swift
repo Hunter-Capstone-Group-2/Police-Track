@@ -16,10 +16,11 @@ struct Signupview: View {
             Color.black .edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
-                    Text("Create an Account")
-                        .foregroundColor(.white)
+                    Text("Create An Account").font(.system(size: 40.0))
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .font(.callout)
                         .bold()
                         .padding()
                         .underline()
@@ -110,5 +111,4 @@ struct Signupview: View {
         }
     }
 }
-
 
