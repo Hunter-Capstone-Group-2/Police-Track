@@ -17,6 +17,8 @@
 		2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79329AAB80100C43AA5 /* Loginview.swift */; };
 		2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79529AAB80A00C43AA5 /* Signupview.swift */; };
 		2D56D79829AAB81900C43AA5 /* Authview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79729AAB81900C43AA5 /* Authview.swift */; };
+		2D86B07529ABEFE900B615F0 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86B07429ABEFE900B615F0 /* Mapview.swift */; };
+		2D86B07729ABF62B00B615F0 /* Listview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86B07629ABF62B00B615F0 /* Listview.swift */; };
 		4BDE3C6F3F04F64951B61174 /* Pods_copwatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		2D56D79529AAB80A00C43AA5 /* Signupview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signupview.swift; sourceTree = "<group>"; };
 		2D56D79729AAB81900C43AA5 /* Authview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authview.swift; sourceTree = "<group>"; };
 		2D56D79929AABA0C00C43AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2D86B07429ABEFE900B615F0 /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
+		2D86B07629ABF62B00B615F0 /* Listview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listview.swift; sourceTree = "<group>"; };
 		4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_copwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3BE2C6E6DD4D8ABD9530FB /* Pods-copwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-copwatch.release.xcconfig"; path = "Target Support Files/Pods-copwatch/Pods-copwatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,8 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				2D56D79329AAB80100C43AA5 /* Loginview.swift */,
+				2D86B07629ABF62B00B615F0 /* Listview.swift */,
 				2D56D79529AAB80A00C43AA5 /* Signupview.swift */,
 				2D56D79729AAB81900C43AA5 /* Authview.swift */,
+				2D86B07429ABEFE900B615F0 /* Mapview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */,
+				2D86B07729ABF62B00B615F0 /* Listview.swift in Sources */,
+				2D86B07529ABEFE900B615F0 /* Mapview.swift in Sources */,
 				2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */,
 				2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */,
 				2D56D78729AAB7E500C43AA5 /* ContentView.swift in Sources */,
