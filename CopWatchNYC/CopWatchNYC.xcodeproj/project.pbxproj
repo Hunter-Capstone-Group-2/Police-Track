@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781E90E429A839EC00C1B29D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E90E329A839EC00C1B29D /* LocationManager.swift */; };
 		78DAF1BB29A4642B008E2DCE /* CopWatchNYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DAF1BA29A4642B008E2DCE /* CopWatchNYCApp.swift */; };
 		78DAF1BD29A4642B008E2DCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DAF1BC29A4642B008E2DCE /* ContentView.swift */; };
 		78DAF1BF29A4642D008E2DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DAF1BE29A4642D008E2DCE /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781E90E329A839EC00C1B29D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		78DAF1B729A4642B008E2DCE /* CopWatchNYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopWatchNYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DAF1BA29A4642B008E2DCE /* CopWatchNYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopWatchNYCApp.swift; sourceTree = "<group>"; };
 		78DAF1BC29A4642B008E2DCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				78DAF1BA29A4642B008E2DCE /* CopWatchNYCApp.swift */,
 				78DAF1BC29A4642B008E2DCE /* ContentView.swift */,
+				781E90E329A839EC00C1B29D /* LocationManager.swift */,
 				78DAF1BE29A4642D008E2DCE /* Assets.xcassets */,
 				78DAF1C029A4642D008E2DCE /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				78DAF1BD29A4642B008E2DCE /* ContentView.swift in Sources */,
 				78DAF1BB29A4642B008E2DCE /* CopWatchNYCApp.swift in Sources */,
+				781E90E429A839EC00C1B29D /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +424,7 @@
 				DEVELOPMENT_TEAM = 6LXL23KBMA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This App needs your location to show it on the map! ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +454,7 @@
 				DEVELOPMENT_TEAM = 6LXL23KBMA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This App needs your location to show it on the map! ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
