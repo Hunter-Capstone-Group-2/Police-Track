@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190B263B29ABDE25009B4FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190B263A29ABDE25009B4FE6 /* GoogleService-Info.plist */; };
+		190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B263D29ABE1FD009B4FE6 /* AppDelegate.swift */; };
+		190B264129ABE4F8009B4FE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B264029ABE4F8009B4FE6 /* String.swift */; };
 		2D56D78529AAB7E500C43AA5 /* copwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D78429AAB7E500C43AA5 /* copwatchApp.swift */; };
 		2D56D78729AAB7E500C43AA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D78629AAB7E500C43AA5 /* ContentView.swift */; };
 		2D56D78929AAB7E700C43AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D56D78829AAB7E700C43AA5 /* Assets.xcassets */; };
@@ -14,9 +17,14 @@
 		2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79329AAB80100C43AA5 /* Loginview.swift */; };
 		2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79529AAB80A00C43AA5 /* Signupview.swift */; };
 		2D56D79829AAB81900C43AA5 /* Authview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D79729AAB81900C43AA5 /* Authview.swift */; };
+		4BDE3C6F3F04F64951B61174 /* Pods_copwatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A660C2173DE1B1B31D6B56F /* Pods-copwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-copwatch.debug.xcconfig"; path = "Target Support Files/Pods-copwatch/Pods-copwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		190B263A29ABDE25009B4FE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		190B263D29ABE1FD009B4FE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		190B264029ABE4F8009B4FE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2D56D78129AAB7E500C43AA5 /* copwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = copwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D56D78429AAB7E500C43AA5 /* copwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = copwatchApp.swift; sourceTree = "<group>"; };
 		2D56D78629AAB7E500C43AA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +34,8 @@
 		2D56D79529AAB80A00C43AA5 /* Signupview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signupview.swift; sourceTree = "<group>"; };
 		2D56D79729AAB81900C43AA5 /* Authview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authview.swift; sourceTree = "<group>"; };
 		2D56D79929AABA0C00C43AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_copwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3BE2C6E6DD4D8ABD9530FB /* Pods-copwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-copwatch.release.xcconfig"; path = "Target Support Files/Pods-copwatch/Pods-copwatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDE3C6F3F04F64951B61174 /* Pods_copwatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190B263C29ABE1EC009B4FE6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				190B263D29ABE1FD009B4FE6 /* AppDelegate.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		190B263F29ABE4DD009B4FE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				190B264029ABE4F8009B4FE6 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2D56D77829AAB7E500C43AA5 = {
 			isa = PBXGroup;
 			children = (
 				2D56D78329AAB7E500C43AA5 /* copwatch */,
 				2D56D78229AAB7E500C43AA5 /* Products */,
+				8480E70F21B1B5D4808D35B3 /* Pods */,
+				A2377436381FC389B4FBFB8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,10 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				2D56D79929AABA0C00C43AA5 /* Info.plist */,
-				2D56D79229AAB7F300C43AA5 /* views */,
+				190B263C29ABE1EC009B4FE6 /* Helper */,
+				190B263F29ABE4DD009B4FE6 /* Extensions */,
+				2D56D79229AAB7F300C43AA5 /* Views */,
 				2D56D78429AAB7E500C43AA5 /* copwatchApp.swift */,
 				2D56D78629AAB7E500C43AA5 /* ContentView.swift */,
 				2D56D78829AAB7E700C43AA5 /* Assets.xcassets */,
+				190B263A29ABDE25009B4FE6 /* GoogleService-Info.plist */,
 				2D56D78A29AAB7E700C43AA5 /* Preview Content */,
 			);
 			path = copwatch;
@@ -76,14 +108,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2D56D79229AAB7F300C43AA5 /* views */ = {
+		2D56D79229AAB7F300C43AA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2D56D79329AAB80100C43AA5 /* Loginview.swift */,
 				2D56D79529AAB80A00C43AA5 /* Signupview.swift */,
 				2D56D79729AAB81900C43AA5 /* Authview.swift */,
 			);
-			path = views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8480E70F21B1B5D4808D35B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A660C2173DE1B1B31D6B56F /* Pods-copwatch.debug.xcconfig */,
+				7D3BE2C6E6DD4D8ABD9530FB /* Pods-copwatch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2377436381FC389B4FBFB8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D56D78F29AAB7E700C43AA5 /* Build configuration list for PBXNativeTarget "copwatch" */;
 			buildPhases = (
+				5C815D397C536522B7130774 /* [CP] Check Pods Manifest.lock */,
 				2D56D77D29AAB7E500C43AA5 /* Sources */,
 				2D56D77E29AAB7E500C43AA5 /* Frameworks */,
 				2D56D77F29AAB7E500C43AA5 /* Resources */,
+				21F33599968E3E8D4053D7D4 /* [CP] Embed Pods Frameworks */,
+				7A5E1255369C0226A5512465 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,20 +197,82 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D56D78C29AAB7E700C43AA5 /* Preview Assets.xcassets in Resources */,
+				190B263B29ABDE25009B4FE6 /* GoogleService-Info.plist in Resources */,
 				2D56D78929AAB7E700C43AA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21F33599968E3E8D4053D7D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C815D397C536522B7130774 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-copwatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A5E1255369C0226A5512465 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D56D77D29AAB7E500C43AA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */,
 				2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */,
 				2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */,
 				2D56D78729AAB7E500C43AA5 /* ContentView.swift in Sources */,
+				190B264129ABE4F8009B4FE6 /* String.swift in Sources */,
 				2D56D78529AAB7E500C43AA5 /* copwatchApp.swift in Sources */,
 				2D56D79829AAB81900C43AA5 /* Authview.swift in Sources */,
 			);
@@ -283,6 +397,7 @@
 		};
 		2D56D79029AAB7E700C43AA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A660C2173DE1B1B31D6B56F /* Pods-copwatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +426,7 @@
 		};
 		2D56D79129AAB7E700C43AA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3BE2C6E6DD4D8ABD9530FB /* Pods-copwatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -2,13 +2,17 @@
 //  copwatchApp.swift
 //  copwatch
 //
-//  Created by Ramy on 2/25/23.
+//  Created by Ramy on 2/23/23.
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct copwatchApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
