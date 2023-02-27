@@ -32,7 +32,7 @@ struct ContentView: View {
             viewModel.checkIfLocationServiceIsEnabled()
             MKMapView.appearance().pointOfInterestFilter = .excludingAll
             // Hide points of interest on the map
-            MKMapView.appearance().showsPointsOfInterest = false
+            MKMapView.appearance().pointOfInterestFilter = .excludingAll
         }
     }
 }
