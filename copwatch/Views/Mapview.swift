@@ -31,6 +31,6 @@ struct Mapview: View {
 
 struct MaptView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Mapview()
     }
 }

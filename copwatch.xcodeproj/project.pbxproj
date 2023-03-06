@@ -20,6 +20,8 @@
 		2D86B07529ABEFE900B615F0 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86B07429ABEFE900B615F0 /* Mapview.swift */; };
 		2D86B07729ABF62B00B615F0 /* Listview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86B07629ABF62B00B615F0 /* Listview.swift */; };
 		4BDE3C6F3F04F64951B61174 /* Pods_copwatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */; };
+		CB4DD91529AD1C1F00DC8378 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4DD91429AD1C1F00DC8378 /* AccountView.swift */; };
+		CB4DD91929B5117600DC8378 /* Navbarview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4DD91829B5117600DC8378 /* Navbarview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		2D86B07629ABF62B00B615F0 /* Listview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listview.swift; sourceTree = "<group>"; };
 		4C95A208B2F331B06B3BA8D3 /* Pods_copwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_copwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3BE2C6E6DD4D8ABD9530FB /* Pods-copwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-copwatch.release.xcconfig"; path = "Target Support Files/Pods-copwatch/Pods-copwatch.release.xcconfig"; sourceTree = "<group>"; };
+		CB4DD91429AD1C1F00DC8378 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		CB4DD91829B5117600DC8378 /* Navbarview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbarview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +123,9 @@
 				2D86B07629ABF62B00B615F0 /* Listview.swift */,
 				2D56D79529AAB80A00C43AA5 /* Signupview.swift */,
 				2D56D79729AAB81900C43AA5 /* Authview.swift */,
+				CB4DD91829B5117600DC8378 /* Navbarview.swift */,
 				2D86B07429ABEFE900B615F0 /* Mapview.swift */,
+				CB4DD91429AD1C1F00DC8378 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,10 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4DD91929B5117600DC8378 /* Navbarview.swift in Sources */,
 				190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */,
 				2D86B07729ABF62B00B615F0 /* Listview.swift in Sources */,
 				2D86B07529ABEFE900B615F0 /* Mapview.swift in Sources */,
 				2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */,
+				CB4DD91529AD1C1F00DC8378 /* AccountView.swift in Sources */,
 				2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */,
 				2D56D78729AAB7E500C43AA5 /* ContentView.swift in Sources */,
 				190B264129ABE4F8009B4FE6 /* String.swift in Sources */,
