@@ -16,14 +16,14 @@ struct Mapview: View {
         
         // Layer a Map view and a semi-transparent Color view using a ZStack
         ZStack {
-            // Display a Map view using the region state variable, and ignore safe areas to extend to the edges of the screen
+            // Create the Map instance here
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
                 .ignoresSafeArea()
                 .accentColor(Color(.systemPink))
             
             // Add a semi-transparent background color to the map
             Color(.systemBackground)
-                .opacity(0.3)
+                .opacity(0.1)
         }
         
         // Set the color scheme to dark, and ignore safe areas to extend to the edges of the screen
@@ -38,6 +38,7 @@ struct Mapview: View {
         }
     }
 }
+
 
 // Define a preview provider for the MapView struct
 struct Mapview_Previews: PreviewProvider {
@@ -58,6 +59,16 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     // Define a location manager variable
     var locationManager: CLLocationManager?
     
+    // This function is called when the location manager receives new location data
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Check if there is at least one location in the array of locations passed to the function
+        guard let location = locations.last else { return }
+        
+        // Set the coordinate region of the Map view to a new region centered around the user's current location
+        region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    }
+
     // Check if location services are enabled and set the delegate to self
     func checkIfLocationServiceIsEnabled() {
         // Check if location services are enabled
