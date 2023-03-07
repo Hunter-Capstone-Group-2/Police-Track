@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import Firebase
 import GoogleSignIn
 
 struct Signupview: View {
@@ -131,7 +132,41 @@ struct Signupview: View {
                         .padding(.horizontal )
                     
                 }
-                Button(action: {}) {
+                Button(action: {
+                    
+                    guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+                    
+                    // Create Google Sign In configuration object.
+                    let config = GIDConfiguration(clientID: clientID)
+                    GIDSignIn.sharedInstance.configuration = config
+                    
+                    // Start the sign in flow!
+                    GIDSignIn.sharedInstance.signIn(withPresenting: getRootViewController()) { result, error in
+                        guard error == nil else {
+                            // ...
+                            return
+                        }
+                        
+                        guard let user = result?.user,
+                              let idToken = user.idToken?.tokenString
+                        else {
+                            // ...
+                            return
+                        }
+                        
+                        let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                                       accessToken: user.accessToken.tokenString)
+                        
+                        Auth.auth().signIn(with: credential) { result, error in
+                            guard error == nil else {
+                                return
+                            }
+                            
+                            print("Signed In")
+                        }
+                    }
+                    
+                }) {
                     HStack {
                         Image("Google Logo")
                             .resizable()
@@ -151,25 +186,6 @@ struct Signupview: View {
                 )
                 .padding(.horizontal )
                 
-                Button(action: {}) {
-                    HStack {
-                        Image("Apple Logo")
-                            .resizable()
-                            .frame(width: 40.0, height: 40.0)
-                        Text("Continue with Apple")
-                    }
-                }
-                .foregroundColor(.white)
-                .font(.title3)
-                .bold()
-                .frame(maxWidth: .infinity)
-                .padding()
-            
-                .background(
-                    RoundedRectangle(cornerRadius: 100)
-                        .fill(Color.black )
-                )
-                .padding(.horizontal )
                 
                 
             }
