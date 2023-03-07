@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 import GoogleSignIn
+import FirebaseCore
 import Firebase
 
 struct Loginview: View {
@@ -136,26 +137,37 @@ struct Loginview: View {
                     
                     Button(action: {
                         
-                        //                    let signInConfig = GIDConfiguration.init(clientID: KGoogle.clientID)
-                        //
-                        //                    GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-                        //                    guard error == nil else { return }
-                        //                    guard let user = user else { return }
-                        //
-                        //                    if let profiledata = user.profile {
-                        //
-                        //                        let userId : String = user.userID ?? ""
-                        //                        let givenName : String = profiledata.givenName ?? ""
-                        //                        let familyName : String = profiledata.familyName ?? ""
-                        //                        let email : String = profiledata.email
-                        //
-                        //                        if let imgurl = user.profile?.imageURL(withDimension: 100) {
-                        //                            let absoluteurl : String = imgurl.absoluteString
-                        //                            //HERE CALL YOUR SERVER API
-                        //                        }
-                        //                    }
-                        //
-                        //                }
+                        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+                        
+                        // Create Google Sign In configuration object.
+                        let config = GIDConfiguration(clientID: clientID)
+                        GIDSignIn.sharedInstance.configuration = config
+                        
+                        // Start the sign in flow!
+                        GIDSignIn.sharedInstance.signIn(withPresenting: getRootViewController()) { result, error in
+                            guard error == nil else {
+                                // ...
+                                return
+                            }
+                            
+                            guard let user = result?.user,
+                                  let idToken = user.idToken?.tokenString
+                            else {
+                                // ...
+                                return
+                            }
+                            
+                            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                                           accessToken: user.accessToken.tokenString)
+                            
+                            Auth.auth().signIn(with: credential) { result, error in
+                                guard error == nil else {
+                                    return
+                                }
+                                
+                                print("Signed In")
+                            }
+                        }
                         
                     }) {
                         HStack {
@@ -163,26 +175,6 @@ struct Loginview: View {
                                 .resizable()
                                 .frame(width: 35.0, height: 35.0)
                             Text(" Continue with Google")
-                        }
-                    }
-                    .foregroundColor(.white)
-                    .font(.title3)
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    
-                    .background(
-                        RoundedRectangle(cornerRadius: 100)
-                            .fill(Color.black )
-                    )
-                    .padding(.horizontal )
-                    
-                    Button(action: {}) {
-                        HStack {
-                            Image("Apple Logo")
-                                .resizable()
-                                .frame(width: 40.0, height: 40.0)
-                            Text("Continue with Apple")
                         }
                     }
                     .foregroundColor(.white)
@@ -209,7 +201,7 @@ struct Loginview: View {
                 
             }
         }
-
+        
         .onAppear {
             // if logged in when app runs, navigate to map and skip login
             if Auth.auth().currentUser != nil {
@@ -217,5 +209,5 @@ struct Loginview: View {
             }
         }
     }
-        
+    
 }

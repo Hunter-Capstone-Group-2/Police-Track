@@ -10,6 +10,9 @@
 		190B263B29ABDE25009B4FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190B263A29ABDE25009B4FE6 /* GoogleService-Info.plist */; };
 		190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B263D29ABE1FD009B4FE6 /* AppDelegate.swift */; };
 		190B264129ABE4F8009B4FE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B264029ABE4F8009B4FE6 /* String.swift */; };
+		1985AD2A29B6F2F200B5E19B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1985AD2929B6F2F200B5E19B /* GoogleSignIn */; };
+		1985AD2C29B6F2F200B5E19B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1985AD2B29B6F2F200B5E19B /* GoogleSignInSwift */; };
+		1985AD2E29B6F8F700B5E19B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985AD2D29B6F8F700B5E19B /* View.swift */; };
 		2D56D78529AAB7E500C43AA5 /* copwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D78429AAB7E500C43AA5 /* copwatchApp.swift */; };
 		2D56D78729AAB7E500C43AA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56D78629AAB7E500C43AA5 /* ContentView.swift */; };
 		2D56D78929AAB7E700C43AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D56D78829AAB7E700C43AA5 /* Assets.xcassets */; };
@@ -27,6 +30,7 @@
 		190B263A29ABDE25009B4FE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		190B263D29ABE1FD009B4FE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		190B264029ABE4F8009B4FE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1985AD2D29B6F8F700B5E19B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2D56D78129AAB7E500C43AA5 /* copwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = copwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D56D78429AAB7E500C43AA5 /* copwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = copwatchApp.swift; sourceTree = "<group>"; };
 		2D56D78629AAB7E500C43AA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDE3C6F3F04F64951B61174 /* Pods_copwatch.framework in Frameworks */,
+				1985AD2A29B6F2F200B5E19B /* GoogleSignIn in Frameworks */,
+				1985AD2C29B6F2F200B5E19B /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				190B264029ABE4F8009B4FE6 /* String.swift */,
+				1985AD2D29B6F8F700B5E19B /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,13 +160,16 @@
 				2D56D77E29AAB7E500C43AA5 /* Frameworks */,
 				2D56D77F29AAB7E500C43AA5 /* Resources */,
 				21F33599968E3E8D4053D7D4 /* [CP] Embed Pods Frameworks */,
-				7A5E1255369C0226A5512465 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = copwatch;
+			packageProductDependencies = (
+				1985AD2929B6F2F200B5E19B /* GoogleSignIn */,
+				1985AD2B29B6F2F200B5E19B /* GoogleSignInSwift */,
+			);
 			productName = copwatch;
 			productReference = 2D56D78129AAB7E500C43AA5 /* copwatch.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 2D56D77829AAB7E500C43AA5;
+			packageReferences = (
+				1985AD2829B6F2F200B5E19B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 2D56D78229AAB7E500C43AA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,23 +263,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A5E1255369C0226A5512465 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-copwatch/Pods-copwatch-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,6 +272,7 @@
 			files = (
 				190B263E29ABE1FD009B4FE6 /* AppDelegate.swift in Sources */,
 				2D86B07729ABF62B00B615F0 /* Listview.swift in Sources */,
+				1985AD2E29B6F8F700B5E19B /* View.swift in Sources */,
 				2D86B07529ABEFE900B615F0 /* Mapview.swift in Sources */,
 				2D56D79629AAB80A00C43AA5 /* Signupview.swift in Sources */,
 				2D56D79429AAB80100C43AA5 /* Loginview.swift in Sources */,
@@ -483,6 +480,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1985AD2829B6F2F200B5E19B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1985AD2929B6F2F200B5E19B /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1985AD2829B6F2F200B5E19B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		1985AD2B29B6F2F200B5E19B /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1985AD2829B6F2F200B5E19B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D56D77929AAB7E500C43AA5 /* Project object */;
 }
