@@ -42,6 +42,9 @@ struct Loginview: View {
                     HStack {
                         Image(systemName: "mail")
                         TextField("Email", text: $email)
+                            .foregroundColor(.white)
+                            .colorScheme(.dark)
+                            
                         
                         Spacer()
                         
@@ -67,6 +70,8 @@ struct Loginview: View {
                     HStack {
                         Image(systemName: "lock")
                         SecureField("Password", text: $password)
+                            .foregroundColor(.white)
+                            .colorScheme(.dark)
                         
                         Spacer()
                         

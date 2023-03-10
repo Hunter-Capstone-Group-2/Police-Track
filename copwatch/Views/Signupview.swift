@@ -14,6 +14,13 @@ struct Signupview: View {
     @Binding var currentShowingView: String
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var confirmPassword: String = ""
+    @State private var showError = false
+    @State private var showAlert = false
+    var passwordsMatch: Bool {
+         return password == confirmPassword
+     }
+
     var body: some View {
         ZStack{
             Color("Color 2").edgesIgnoringSafeArea(.all)
@@ -34,6 +41,7 @@ struct Signupview: View {
                 .padding(.top)
                 
                 Spacer()
+                
                 
                 HStack {
                     Image(systemName: "mail")
@@ -59,40 +67,80 @@ struct Signupview: View {
                 
                 .padding()
                 
-                
-                HStack {
-                    Image(systemName: "lock")
-                    SecureField("Password", text: $password)
-                    
-                    Spacer()
-                    
-                    
-                    if(password.count != 0) {
-                        Image(systemName: password.isValidPassword(password) ? "checkmark" : "xmark")
-                            .fontWeight(.bold)
-                            .foregroundColor(password.isValidPassword(password) ? .green : .red)
+                VStack {
+                    HStack {
+                        Image(systemName: "lock")
+                        SecureField("Password", text: $password)
+
+                        Spacer()
+
+                        if(password.count != 0) {
+                            Image(systemName: password.isValidPassword(password) ? "checkmark" : "xmark")
+                                .fontWeight(.bold)
+                                .foregroundColor(password.isValidPassword(password) ? .green : .red)
+                        }
                     }
-                    
-                    
-                }
-                .foregroundColor(.white)
-                .padding()
-                .overlay{
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.white)
+                    .foregroundColor(.white)
+                    .padding()
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.white)
+                    }
+                        .padding()
+                 
+                    HStack {
+                        
+                        Image(systemName: "lock")
+                        SecureField("Confirm Password", text: $confirmPassword)
+                        
+                        Spacer()
+        
+                        if confirmPassword.count != 0 {
+                            Image(systemName: passwordsMatch ? "checkmark" : "xmark")
+                                .fontWeight(.bold)
+                                .foregroundColor(passwordsMatch ? .green : .red)
+                        }
+
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    Text("(Password must contain 6 characters, an uppercase, and symbol.)")
+                               .foregroundColor(.gray)
+                               .font(.caption)
                 }
                 
-                .padding()
+
+               
+
+                
+                
+              
+                
+  
+                
+                
+                
                 
                 Button(action: {
                     withAnimation {
                         self.currentShowingView = "login"
                     }
                     
+                    
+                    
+                    
                 }) {
+                    
                     Text("Already have an account? ")
-                        .foregroundColor(.gray)
+                        .padding()
+                        .foregroundColor(.white)
                     
                 }
                 
@@ -103,19 +151,22 @@ struct Signupview: View {
                 Spacer()
                 
                 Button {
-                    
-                    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                        
-                        if let error = error {
-                            print(error)
-                            return
+                    if password == confirmPassword {
+                        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                            if let error = error {
+                                print(error)
+                                return
+                            }
+
+                            if let authResult = authResult {
+                                print(authResult.user.uid)
+                            }
                         }
-                        
-                        if let authResult = authResult {
-                            print(authResult.user.uid)
-                            
-                        }
+                    } else {
+                        // Display an error message
+                        showAlert = true
                     }
+
                     
                 } label: {
                     Text("Register your Account ")
@@ -132,6 +183,9 @@ struct Signupview: View {
                         .padding(.horizontal )
                     
                 }
+                
+                
+                
                 Button(action: {
                     
                     guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -179,7 +233,7 @@ struct Signupview: View {
                 .bold()
                 .frame(maxWidth: .infinity)
                 .padding()
-            
+                
                 .background(
                     RoundedRectangle(cornerRadius: 100)
                         .fill(Color.black )
