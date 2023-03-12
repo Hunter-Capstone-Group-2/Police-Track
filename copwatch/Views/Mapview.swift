@@ -17,13 +17,12 @@ struct Mapview: View {
         // Layer a Map view and a semi-transparent Color view using a ZStack
         ZStack {
             // Create the Map instance here
-            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+            Map(coordinateRegion: $viewModel.region,interactionModes: [.all], showsUserLocation: true )
                 .ignoresSafeArea()
                 .accentColor(Color(.systemPink))
-            
             // Add a semi-transparent background color to the map
-            Color(.systemBackground)
-                .opacity(0.1)
+//            Color(.systemBackground)
+//                .opacity(0.1)
         }
         
         // Set the color scheme to dark, and ignore safe areas to extend to the edges of the screen
