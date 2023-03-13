@@ -13,9 +13,9 @@ struct Mapview: View {
         ZStack {
             Map(coordinateRegion: $region) // Display a Map view using the region state variable
             
-            Color(.systemBackground)
-                .opacity(0.3) // Add a semi-transparent background color to the map
-        }
+//                Color(.systemBackground)
+//                    .opacity(0.3) // Add a semi-transparent background color to the map
+            }
         .colorScheme(.dark) // Set the color scheme to dark
         .edgesIgnoringSafeArea(.all) // Make the map extend to the edges of the screen
         
